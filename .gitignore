@@ -2,3 +2,7 @@ input_data
 saved_models
 testing_data
 generated_sounds
+*.wav
+*.pt
+.idea
+venv

@@ -8,3 +8,6 @@ Using that trained network, incoming audio will processed by the network and hop
 Use the `record.py` script to capture sound from your computer's default audio input source.
 Use the `train.py` script to train on the captured audio files.
 Use the `test.py` script to generate audio based on an input audio file.
+
+# Sound Experiments
+Decreasing the kernal size and reducing epochs gave the sound a more distorted/fuzz effect.

@@ -5,14 +5,23 @@ class Autoencoder(nn.Module):
     def __init__(self, input_size):
         super(Autoencoder, self).__init__()
         self.encoder = nn.Sequential(
-            nn.Conv1d(1, 16, 3, stride=2, padding=1),
-            nn.Conv1d(16, 32, 3, stride=2, padding=1),
-            nn.Conv1d(32, 64, 3)
+            nn.Conv1d(1, 64, 1),
+            nn.BatchNorm1d(64),
+            nn.ReLU(),
+            nn.Conv1d(64, 128, 1),
+            nn.BatchNorm1d(128),
+            nn.ReLU(),
+            nn.Conv1d(128, 256, 1),
         )
         self.decoder = nn.Sequential(
-            nn.ConvTranspose1d(64, 32, 3),
-            nn.ConvTranspose1d(32, 16, 3, stride=2, padding=1, output_padding=1),
-            nn.ConvTranspose1d(16, 1, 3, stride=2, padding=1, output_padding=1),
+            nn.ConvTranspose1d(256, 128, 1),
+            nn.BatchNorm1d(128),
+            nn.ReLU(),
+            nn.ConvTranspose1d(128, 64, 1),
+            nn.BatchNorm1d(64),
+            nn.ReLU(),
+            nn.ConvTranspose1d(64, 1, 1),
+            nn.Tanh()
         )
 
     def forward(self, x):

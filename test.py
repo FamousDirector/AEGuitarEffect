@@ -39,6 +39,6 @@ for file in os.listdir(args.input_data_path):
         new_waveform = torch.cat(waveform_chunks).unsqueeze(0)
 
         # Save the generated data as a WAV file
-        output_filename = f'{args.output_data_path}/{file.split(".")[0]}.wav'
+        output_filename = f'{args.output_data_path}/{file.split(".")[0]}_generated.wav'
         new_waveform = new_waveform.to('cpu')
         torchaudio.save(output_filename, new_waveform, sample_rate)

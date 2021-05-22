@@ -1,1 +1,7 @@
 PyAudio~=0.2.11
+torch~=1.8.1
+torchaudio~=0.8.1
+matplotlib~=3.3.4
+ipython~=7.16.1
+numpy~=1.19.5
+scipy~=1.5.4

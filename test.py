@@ -5,7 +5,7 @@ import torchaudio
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-l', '--sample-length', help='Number of values in sample', type=int, default=2500)
+parser.add_argument('-l', '--sample-length', help='Number of values in sample', type=int, default=500)
 parser.add_argument('-i', '--input-data-path', help='Where the .wav files to train are',
                     type=str, default="testing_data/")
 parser.add_argument('-o', '--output-data-path', help='Where to save the trained model',
